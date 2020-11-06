@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./venn-hello.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <venn-hello msg="Welcome 13"></venn-hello>
+    <venn-hello msg="Welcome 2"></venn-hello>   
+    <button onclick="sendDataToHello2('Hello from hello1')">Enviar datos del hello 1 a hello 2</button> 
+    <button onclick="sendDataToHello1('Hello from hello2')">Enviar datos del hello 2 a hello 1</button> 
+    <script>
+        function sendDataToHello2(message) {
+            var component = document.getElementsByTagName('venn-hello')[1]
+            component.msg = message;
+        }
+
+        function sendDataToHello1(message) {
+            var component = document.getElementsByTagName('venn-hello')[0]
+            component.msg = message;
+        }
+    </script>
+</body>
+</html>
